@@ -228,6 +228,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2405184418523938070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6587184374453750037}
+  m_Layer: 0
+  m_Name: FollowCameraPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6587184374453750037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2405184418523938070}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.661, z: -0.404}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3385700723323060970}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2424975753272770921
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +442,7 @@ Transform:
   - {fileID: 1199068428977483579}
   - {fileID: 7655980790787138365}
   - {fileID: 7186953556523871502}
+  - {fileID: 6587184374453750037}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -464,6 +496,7 @@ MonoBehaviour:
   _RfrontTransf: {fileID: 390389578524194384}
   _LbackTransf: {fileID: 8630872508600155980}
   _RbackTransf: {fileID: 587198537836630127}
+  _centerMass: {x: 0, y: 0.34, z: -0.6}
 --- !u!114 &1105173886446886642
 MonoBehaviour:
   m_ObjectHideFlags: 0

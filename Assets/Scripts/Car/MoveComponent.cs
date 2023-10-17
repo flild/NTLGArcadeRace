@@ -6,14 +6,25 @@ namespace RaceArcade
     public class MoveComponent : MonoBehaviour
     {
         private Car _car;
+        private Rigidbody _rb;
         [SerializeField] private WheelCollider _LfrontCol, _RfrontCol, _LbackCol, _RbackCol;
         [SerializeField] private Transform _LfrontTransf, _RfrontTransf, _LbackTransf, _RbackTransf;
+        [SerializeField] private Vector3 _centerMass;
+
 
 
         private void Start()
         {
             _car = GetComponent<Car>();
+             _rb = _car.GetComponent<Rigidbody>();
+            _rb.centerOfMass = _centerMass;
         }
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawSphere(transform.TransformPoint(_centerMass), .3f);
+        }
+
         //call in fixed update
         public void Drive(Vector2 direction)
         {
@@ -28,8 +39,8 @@ namespace RaceArcade
         }
         private void ForceBackWheels(float directionY)
         {
-            float scaledTorque = directionY * _car.motorForce;
 
+            float scaledTorque = directionY * _car.motorForce;
             _RbackCol.motorTorque = scaledTorque;
             _LbackCol.motorTorque = scaledTorque;
 
