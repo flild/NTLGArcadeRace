@@ -9,6 +9,7 @@ namespace RaceArcade
         [SerializeField] private Canvas _recordBoard;
         [SerializeField] private RecordUI _recordFieldPrefub;
         [SerializeField] private RectTransform[] _RecordPosition;
+        [SerializeField] private RaceTimer _raceTimer;
 
         private float _curRecord;
         public void ShowRecordBoard()
@@ -22,8 +23,12 @@ namespace RaceArcade
                 var record = Instantiate(_recordFieldPrefub, _RecordPosition[i-1].position ,Quaternion.identity ,_recordBoard.transform);
                 record.SetRecord("player",_curRecord);
             }
-
         }
+        public void UpdateRaceTimer(float time)
+        {
+            _raceTimer.UpdateTimer((double)time);
+        }
+
 
     }
 }

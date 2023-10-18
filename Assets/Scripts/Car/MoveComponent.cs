@@ -28,7 +28,7 @@ namespace RaceArcade
         //call in fixed update
         public void Drive(Vector2 direction)
         {
-            ForceBackWheels(direction.y);
+            ForceWheels(direction.y);
             SteerCar(direction.x);
             UpdateWeelView();
         }
@@ -37,12 +37,14 @@ namespace RaceArcade
             _LbackCol.brakeTorque = isPressed ? float.MaxValue : 0;
             _RbackCol.brakeTorque = isPressed ? float.MaxValue : 0;
         }
-        private void ForceBackWheels(float directionY)
+        private void ForceWheels(float directionY)
         {
 
             float scaledTorque = directionY * _car.motorForce;
             _RbackCol.motorTorque = scaledTorque;
             _LbackCol.motorTorque = scaledTorque;
+            _RfrontCol.motorTorque = scaledTorque / 4;
+            _LfrontCol.motorTorque = scaledTorque / 4;
 
         }
 

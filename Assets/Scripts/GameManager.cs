@@ -8,7 +8,6 @@ namespace RaceArcade
         private float _finishTime;
         private UIManager _UIManager;
 
-        [SerializeField] private TMP_Text _timer;
      
         private void Awake()
         {
@@ -19,10 +18,7 @@ namespace RaceArcade
         }
         private void FixedUpdate()
         {
-            //обрезать до двух знаков после запятой
-            //вынести в отдельную корутину, чтобы стопать её на финише
-            //и чтобы начинать не со старта
-            _timer.text = "Timer: " + (Time.time - _startTime);
+            _UIManager.UpdateRaceTimer(Time.time - _startTime);
         }
         private void OnDisable()
         {
@@ -44,8 +40,9 @@ namespace RaceArcade
                 curRecord = PlayerPrefs.GetFloat("Record" + i, -1f);
                 if( curRecord == -1 || _finishTime<curRecord)
                 {
+                    var temp_time = curRecord;
                     PlayerPrefs.SetFloat("Record" + i, _finishTime);
-                    break;
+                    _finishTime = temp_time;
                 }
             }
             _UIManager.ShowRecordBoard();

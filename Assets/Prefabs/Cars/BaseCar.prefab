@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 1105173886446886642}
   - component: {fileID: -8262880725224298415}
   - component: {fileID: 5054597400129902216}
+  - component: {fileID: 7817823782167625817}
   m_Layer: 0
   m_Name: BaseCar
   m_TagString: Untagged
@@ -534,6 +535,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.85, y: 0.93000007, z: 4.650882}
   m_Center: {x: 0, y: 0.85, z: -0.0850749}
+--- !u!114 &7817823782167625817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2717848098956384336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8aafdc57807a14fb35e5093edb9d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3320909573514999541
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +607,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 0.9
   m_Enabled: 1
 --- !u!1 &3569898337698454580
 GameObject:
@@ -739,7 +752,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 0.9
   m_Enabled: 1
 --- !u!1 &6150093755298856738
 GameObject:
