@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace RaceArcade
 {
+
     public class Car : MonoBehaviour
     {
         [SerializeField, Range(500,3000)]
@@ -11,7 +12,7 @@ namespace RaceArcade
 
         public int motorForce { get { return _motorForce; } set { _motorForce = value; } }
         public float steerAngle { get { return _steerAngle; } set { _steerAngle = value; } }
-        
+
     }
 }
 
