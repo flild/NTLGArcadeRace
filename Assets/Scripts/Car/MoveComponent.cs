@@ -2,11 +2,12 @@ using UnityEngine;
 
 namespace RaceArcade
 {
-    [RequireComponent(typeof(Car))]
+    [RequireComponent(typeof(Car),typeof(CarView))]
     public class MoveComponent : MonoBehaviour
     {
         private Car _car;
         private Rigidbody _rb;
+        private CarView _carView;
         [SerializeField] private WheelCollider _LfrontCol, _RfrontCol, _LbackCol, _RbackCol;
         [SerializeField] private Transform _LfrontTransf, _RfrontTransf, _LbackTransf, _RbackTransf;
         [SerializeField] private Vector3 _centerMass;
@@ -17,6 +18,7 @@ namespace RaceArcade
         {
             _car = GetComponent<Car>();
              _rb = _car.GetComponent<Rigidbody>();
+            _carView = _car.GetComponent<CarView>();
             _rb.centerOfMass = _centerMass;
         }
         private void OnDrawGizmos()
@@ -34,8 +36,19 @@ namespace RaceArcade
         }
         public void BrakeVihicle(bool isPressed)
         {
-            _LbackCol.brakeTorque = isPressed ? float.MaxValue : 0;
-            _RbackCol.brakeTorque = isPressed ? float.MaxValue : 0;
+            if(isPressed)
+            {
+                _LbackCol.brakeTorque =  float.MaxValue;
+                _RbackCol.brakeTorque = float.MaxValue;
+                _carView.PlayDriftEffects(true);
+            }
+            else
+            {
+                _LbackCol.brakeTorque = 0;
+                _RbackCol.brakeTorque = 0;
+                _carView.StopDriftEffects(true);
+            }
+            
         }
         private void ForceWheels(float directionY)
         {

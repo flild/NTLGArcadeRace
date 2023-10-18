@@ -2,38 +2,39 @@ using UnityEngine;
 
 namespace RaceArcade
 {
-    [RequireComponent(typeof(Rigidbody))]
     public class CarView : MonoBehaviour
     {
-        private bool IsDrift = false;
-        [SerializeField,Range(0,1f)] private float _minDriftAngle;
-        [SerializeField]private ParticleSystem _tireSteamR, _tireSteamL;
+        [SerializeField, Tooltip("Ёффект дыма на колесах")]
+        private ParticleSystem _RtireSteam, _LtireSteam;
+        [SerializeField, Tooltip("—леды шин")]
+        private TrailRenderer _RtireTrail,_LtireTrail;
+        private bool _handBrake = false;
 
-        private Rigidbody _rb;
 
-        private void Awake()
+        public void PlayDriftEffects(bool isHandBrake)
         {
-            _rb = GetComponent<Rigidbody>();
+            if (isHandBrake) 
+                _handBrake = true;
+            _RtireSteam.Play();
+            _LtireSteam.Play();
+            _RtireTrail.emitting = true;
+            _LtireTrail.emitting = true;
         }
-        private void FixedUpdate()
+        public void StopDriftEffects(bool isHandBrake)
         {
-            CheckCarOnDrift();
-        }
-        private void CheckCarOnDrift()
-        {
-            float driftAngle = Vector3.Dot(_rb.velocity.normalized, transform.forward);
-            if(driftAngle <_minDriftAngle)
+            if(isHandBrake)
+                _handBrake = false;
+            if (!_handBrake)
             {
-                _tireSteamR.Play();
-                _tireSteamL.Play();
-                IsDrift = true;
+                _RtireSteam.Stop();
+                _LtireSteam.Stop();
+                _RtireTrail.emitting = false;
+                _LtireTrail.emitting = false;
+                
             }
-            else
-            {
-                _tireSteamR.Stop();
-                _tireSteamL.Stop();
-            }
+
         }
+
     }
 
 }
