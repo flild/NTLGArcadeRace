@@ -47,6 +47,10 @@ namespace RaceArcade
             }
             _UIManager.ShowRecordBoard();
         }
+        private void Countdown()
+        {
+
+        }
     }
 }
 

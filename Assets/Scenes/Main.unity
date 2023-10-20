@@ -1169,6 +1169,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 416004, guid: c551be7c89271e44c8a795eff4869f62, type: 3}
   m_PrefabInstance: {fileID: 525776303}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &559947053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2897578471494916349, guid: e6431f62be267154082f3c8bcd425ca2, type: 3}
+  m_PrefabInstance: {fileID: 1692258049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &559947057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559947053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54762c883f45f1e4b8a240f34ebff049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speedArrow: {fileID: 999603256}
 --- !u!1 &569614452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,6 +1900,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 461726, guid: 27efc696dd4698a43a8c68ebcf493a87, type: 3}
   m_PrefabInstance: {fileID: 968456190}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &999603256 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1238451991940075331, guid: e6431f62be267154082f3c8bcd425ca2, type: 3}
+  m_PrefabInstance: {fileID: 1692258049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1024765233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,6 +2462,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0.6791992, y: -260}
   m_SizeDelta: {x: -494.8963, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1222787271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2717848098956384336, guid: e6431f62be267154082f3c8bcd425ca2, type: 3}
+  m_PrefabInstance: {fileID: 1692258049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1222787282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222787271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95ddc275d9e4cb41b24ee65a5391633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speedometr: {fileID: 559947057}
 --- !u!1001 &1261014826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2906,6 +2953,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1376678182771668516, guid: e6431f62be267154082f3c8bcd425ca2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2717848098956384336, guid: e6431f62be267154082f3c8bcd425ca2, type: 3}
       propertyPath: m_Name
       value: BaseCar
@@ -2969,6 +3020,14 @@ PrefabInstance:
     - target: {fileID: 6587184374453750037, guid: e6431f62be267154082f3c8bcd425ca2, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249144523232014978, guid: e6431f62be267154082f3c8bcd425ca2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249144523232014978, guid: e6431f62be267154082f3c8bcd425ca2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6431f62be267154082f3c8bcd425ca2, type: 3}
@@ -3621,7 +3680,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894232999}
-  m_LocalRotation: {x: 0.10544714, y: 0.6992002, z: -0.105447166, w: 0.69920015}
+  m_LocalRotation: {x: 0.10544714, y: 0.6992002, z: -0.10544717, w: 0.69920015}
   m_LocalPosition: {x: -44.64, y: 12.160999, z: 6.310001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3859,6 +3918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _recordBoard: {fileID: 1024765236}
+  _mainCanvas: {fileID: 1063765408}
   _recordFieldPrefub: {fileID: 7997969131955048137, guid: 7a70d840201fef94aaa1d6af42c5355c, type: 3}
   _RecordPosition:
   - {fileID: 1650732574}
@@ -3872,6 +3932,7 @@ MonoBehaviour:
   - {fileID: 1079674547}
   - {fileID: 268902731}
   _raceTimer: {fileID: 1052258453}
+  _countdown: {fileID: 2282308882734156519, guid: 3a003a2be1b602e4abdab9c27b873e51, type: 3}
 --- !u!1001 &2061007922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4222,7 +4283,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126630824}
-  m_LocalRotation: {x: 0.10544714, y: 0.6992002, z: -0.105447166, w: 0.69920015}
+  m_LocalRotation: {x: 0.10544714, y: 0.6992002, z: -0.10544717, w: 0.69920015}
   m_LocalPosition: {x: -44.64, y: 12.160999, z: 6.310001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

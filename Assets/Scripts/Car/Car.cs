@@ -16,6 +16,7 @@ namespace RaceArcade
         private bool IsDrift = false;
         private Rigidbody _rb;
         private CarView _carView;
+
         public int motorForce { get { return _motorForce; } set { _motorForce = value; } }
         public float steerAngle { get { return _steerAngle; } set { _steerAngle = value; } }
         
@@ -43,6 +44,8 @@ namespace RaceArcade
                 _carView.StopDriftEffects(false);
             }
         }
+
+
     }
 }
 
