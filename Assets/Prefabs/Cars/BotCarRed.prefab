@@ -178,7 +178,7 @@ RectTransform:
   m_Children:
   - {fileID: 7218454393624130125}
   m_Father: {fileID: 3385700723323060970}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -329,37 +329,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &2405184418523938070
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6587184374453750037}
-  m_Layer: 0
-  m_Name: FollowCameraPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6587184374453750037
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2405184418523938070}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.661, z: -0.404}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3385700723323060970}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2424975753272770921
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +390,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 07f44fe3e9c462146a7769b976c50ec4, type: 2}
+  - {fileID: 2100000, guid: c4c2ee3e832cffd48bb9d156c2b21376, type: 2}
   - {fileID: 2100000, guid: ab035d7682921704a9015ac353311d57, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -518,13 +487,13 @@ GameObject:
   - component: {fileID: 6937426938601694018}
   - component: {fileID: 7495660311440452600}
   - component: {fileID: 2823858133383668943}
-  - component: {fileID: 1105173886446886642}
   - component: {fileID: 5054597400129902216}
   - component: {fileID: 7817823782167625817}
   - component: {fileID: 6470106047148252180}
   - component: {fileID: 6425482757195546010}
+  - component: {fileID: 3017370741391071540}
   m_Layer: 0
-  m_Name: BaseCar
+  m_Name: BotCarRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,7 +514,6 @@ Transform:
   - {fileID: 1199068428977483579}
   - {fileID: 7655980790787138365}
   - {fileID: 7186953556523871502}
-  - {fileID: 6587184374453750037}
   - {fileID: 3869910931660590674}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -578,7 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7cbbecb5e632e64b9cb0acbba109525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _motorForce: 1500
+  _motorForce: 500
   _steerAngle: 25
   _minDriftAngle: 0.99
 --- !u!114 &2823858133383668943
@@ -602,18 +570,6 @@ MonoBehaviour:
   _LbackTransf: {fileID: 8630872508600155980}
   _RbackTransf: {fileID: 587198537836630127}
   _centerMass: {x: 0, y: 0.34, z: -0.6}
---- !u!114 &1105173886446886642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2717848098956384336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b077e994651e5a4988474738fc9b391, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &5054597400129902216
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -625,8 +581,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.85, y: 0.93000007, z: 4.650882}
-  m_Center: {x: 0, y: 0.85, z: -0.0850749}
+  m_Size: {x: 1.85, y: 0.7936288, z: 4.3865976}
+  m_Center: {x: 0, y: 0.7818144, z: -0.011939526}
 --- !u!114 &7817823782167625817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,7 +611,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bb4547b12a2dc5544bc90a0d6cfed265, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.63
+  m_Volume: 0.37
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -756,6 +712,22 @@ MonoBehaviour:
   _maxSpeed: 40
   _minPitch: 0.2
   _maxPitch: 1
+--- !u!114 &3017370741391071540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2717848098956384336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09735f55f7de5c245a8e0a105654ab86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _racePoints: []
+  _minAngleTorotation: 3
+  _stuckCheckDelay: 2
+  _minLengthToReturn: 0.5
 --- !u!1 &2897578471494916349
 GameObject:
   m_ObjectHideFlags: 0

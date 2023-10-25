@@ -12,14 +12,14 @@ namespace RaceArcade
         [SerializeField] private RectTransform[] _RecordPosition;
         [SerializeField] private RaceTimer _raceTimer;
         [SerializeField] private CountdownUI _countdown;
+        public string name;
+        private GameManager _gameManager;
 
 
         private float _curRecord;
-        private void Start()
+        private void Awake()
         {
-            _countdown = Instantiate(_countdown, _mainCanvas.transform);
-            _countdown.endedCountdown += OnEndCountdown;
-
+            _gameManager = GetComponent<GameManager>();
         }
         private void OnDisable()
         {
@@ -31,11 +31,17 @@ namespace RaceArcade
             for(int i = 1; i<10;i++)
             {
                 _curRecord = PlayerPrefs.GetFloat("Record" + i, -1f);
+                var _curName = PlayerPrefs.GetString("RecordStr" + i, "player");
                 if (_curRecord == -1)
                     break;
                 var record = Instantiate(_recordFieldPrefub, _RecordPosition[i-1].position ,Quaternion.identity ,_recordBoard.transform);
-                record.SetRecord("player",_curRecord);
+                record.SetRecord(_curName, _curRecord);
             }
+        }
+        public void StartCoundown()
+        {
+            _countdown = Instantiate(_countdown, _mainCanvas.transform);
+            _countdown.endedCountdown += OnEndCountdown;
         }
         public void UpdateRaceTimer(float time)
         {
@@ -44,6 +50,7 @@ namespace RaceArcade
         private void OnEndCountdown()
         {
             _countdown.gameObject.SetActive(false);
+            _gameManager.StartRace();
             //todo включение управления
         }
 

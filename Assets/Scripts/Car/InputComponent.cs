@@ -33,6 +33,15 @@ namespace RaceArcade
             _input.CarInputMap.HandBrake.started -= OnPutBrakes;
             _input.CarInputMap.HandBrake.canceled -= OnCanceledBrake;
         }
+        public void DisableInput()
+        {
+            _input.Disable();
+        }
+
+        public void EnableInput()
+        {
+            _input.Enable();
+        }
 
         private void OnPutBrakes(InputAction.CallbackContext context)
         {
